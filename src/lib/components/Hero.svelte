@@ -36,10 +36,10 @@
         display: flex;
         align-items: center;
         color: #fff;
-        text-shadow: 0 1px 4px rgba(0,0,0,.6);
-    }
+        margin:10rem auto;
+        }
     .hero-content {
-        max-width: 40rem;
+        max-width: 100%;
     }
     .tagline { margin-bottom: 1.5rem; font-size: var(--fs-lg); }
     .cta {

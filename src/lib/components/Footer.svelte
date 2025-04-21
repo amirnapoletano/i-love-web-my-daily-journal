@@ -28,7 +28,7 @@
     /* ─── FOOTER ─────────────────────────────────────────────────── */
     .site-footer {
     padding-block: 3.5rem;
-    background: var(--clr-white);
+    background: var(--clr-muted);
 }
 
     .footer-inner {

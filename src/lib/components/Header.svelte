@@ -1,67 +1,98 @@
 <script>
-    import logoPng    from '$lib/assets/Sailor.png?url';
-    import logoWebp   from '$lib/assets/Sailor.webp?url';
+    import logoPng  from '$lib/assets/Sailor.png?url';
+    import logoWebp from '$lib/assets/Sailor.webp?url';
 </script>
 
-<header class="site-header">
-    <nav class="container">
-        <a class="brand" href="/">
+<header class="site-header" role="banner">
+    <div class="container nav-wrapper">
+        <a class="brand" href="/" aria-label="Go to homepage">
             <picture>
                 <source srcset={logoWebp} type="image/webp" />
-                <img   src={logoPng}  alt="Logo" />
+                <img src={logoPng} alt="My Daily Journal logo" width="32" height="32" />
             </picture>
-            <span>My Daily Journal</span>
+            <span class="brand-text">My Daily Journal</span>
         </a>
 
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <!-- add About / Contact etc. later -->
-        </ul>
-    </nav>
+        <nav class="site-nav" aria-label="Main navigation">
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <!-- future links -->
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <style>
-/* ─── HEADER ─────────────────────────────────────────────────── */
-.site-header {
-    background: var(--clr-black);
-    color: var(--clr-white);
-}
+    /* ─── BRAND / RESET ─────────────────────────────────────────── */
+    .site-header {
+        background-color: var(--clr-black);
+        color: var(--clr-white);
+        padding: 0.5rem 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        position: sticky;
+    }
 
-.site-header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 0;
-}
+    .nav-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    text-decoration: none;
-    color: inherit;
-    font-weight: 600;
-}
+    /* ─── BRAND ─────────────────────────────────────────────────── */
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: inherit;
+    }
 
-.brand img {
-    inline-size: 32px;
-    block-size: 32px;
-}
+    .brand img {
+        display: block;
+        width: 32px;
+        height: 32px;
+    }
 
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-}
+    .brand-text {
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
 
-.nav-links a {
-    color: var(--clr-white);
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: opacity 0.2s;
-}
+    /* ─── NAV LINKS ────────────────────────────────────────────── */
+    .site-nav {}
 
-.nav-links a:hover { opacity: 0.7; }
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+    }
 
+    .nav-link {
+        color: var(--clr-white);
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background-color 0.2s, color 0.2s;
+    }
 
+    .nav-link:hover,
+    .nav-link:focus {
+        background-color: var(--clr-white);
+        color: var(--clr-black);
+        outline: none;
+    }
+
+    .nav-link:focus-visible {
+        box-shadow: 0 0 0 3px var(--clr-accent);
+    }
+
+    /* ─── RESPONSIVE ADJUSTMENTS ───────────────────────────────── */
+    @media (max-width: 600px) {
+        .brand-text { font-size: 1rem; }
+        .nav-links { gap: 1rem; }
+    }
 </style>
