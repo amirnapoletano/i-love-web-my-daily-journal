@@ -1,6 +1,7 @@
 {
 	"name": "i-love-web-my-daily-journal",
 	"version": "0.0.1",
+	"type": "module",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
@@ -16,7 +17,8 @@
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
 		"svelte": "^4.2.7",
+		"svelte-preprocess": "^6.0.3",
+		"typescript": "^5.8.3",
 		"vite": "^5.0.3"
-	},
-	"type": "module"
+	}
 }

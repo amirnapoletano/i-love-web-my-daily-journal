@@ -1,6 +1,71 @@
-<body>
-<section class="journal-content">
-    <h1>My Daily Journal 2024/2025</h1>
+<script lang="ts">
+    import Hero     from '$lib/components/Hero.svelte';
+    import Features from '$lib/components/Features.svelte';
+    import Entries  from '$lib/components/Entries.svelte';
+    import heroWebp   from '$lib/assets/journaling_pirate_ship_scene.webp?url';
+    import heroPng    from '$lib/assets/journaling_pirate_ship_scene.png?url';
+    import journalWebp from '$lib/assets/journaling_scene.webp?url';
+    import journalPng  from '$lib/assets/journaling_scene.png?url';
+</script>
+
+<Hero {heroWebp} {heroPng} />
+<Features {journalWebp} {journalPng} />
+<Entries />
+
+
+
+<!-- ─────────────────────────  HERO  ──────────────────────────── -->
+<section class="hero"
+           style={`--hero-bg: url(${heroWebp}) center/cover, url(${heroPng}) center/cover`}
+>
+    <div class="container hero-content">
+        <picture>
+            <source srcset={heroWebp} type="image/webp" />
+            <img   src={heroPng}  alt="Hero" loading="lazy" />
+        </picture>
+        <h1>My Daily Journal 2024/2025</h1>
+        <p class="tagline">
+            A cozy space to reflect, grow, and document your everyday journey
+        </p>
+        <a class="cta" href="#entries">Start Journaling</a>
+    </div>
+</section>
+
+<!-- ───────────────────  “WHY YOU’LL LOVE…”  ─────────────────── -->
+<section   class="features container"
+
+
+
+
+           style={`background: url(${journalWebp}) center/cover, url(${journalPng}) center/cover `}>
+
+    <ul class="feat-list">
+        <li>
+            <h3>Daily Reflections</h3>
+            <p>Write down your thoughts, wins, and lessons every day.</p>
+        </li>
+        <li>
+            <h3>Mood Tracking</h3>
+            <p>Track your mood over time to see trends and patterns.</p>
+        </li>
+        <li>
+            <h3>Attach Resources</h3>
+            <p>Add links or images to remember key materials or ideas.</p>
+        </li>
+        <li>
+            <h3>Privacy First</h3>
+            <p>Your journal is for your eyes only—unless you choose to share.</p>
+        </li>
+    </ul>
+</section>
+
+<!-- ─────────────────────  JOURNAL ENTRIES  ───────────────────── -->
+<section id="entries" class="entries">
+    <div class="container">
+        <!-- keeps your original HTML intact inside the new card grid -->
+        <article class="journal-content">
+            <!-- ✂️  paste your long list of <h2>/<p>/<ul> here, unchanged  -->
+            {@html `<h2>Maandag 2 september 2024</h2>
 
     <h2>Maandag 2 september 2024</h2>
     <p>De week begon met het leren van de basisprincipes van Svelte en SvelteKit. We hebben de projectstructuur voor de squad-pagina in SvelteKit opgezet en samengewerkt aan het eerste ontwerp in Figma.</p>
@@ -242,59 +307,131 @@
     <ul>
         <li><a href="https://web.dev/learn/design">Web Development Design Principles</a></li>
     </ul>
+`}
+            <!-- …the rest of your existing markup… -->
+        </article>
+    </div>
 </section>
-</body>
 
-<style>
-    body {
-        font-family: 'Roboto', sans-serif;
-        background-color: #f4f4f9;
-        margin: 0;
-        padding: 20px;
-        background-color: #212831;
-    }
 
-    .journal-content {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color:#dbdbdb ;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        font-size: 1rem;
-        line-height: 1.8;
-    }
+<style>/* ─── RESET & TOKENS ─────────────────────────────────────────── */
+:root {
+    --clr-black: #000000;
+    --clr-white: #ffffff;
+    --clr-accent: #e7722d;        /* orange button */
+    --font-body: 'Roboto', system-ui, sans-serif;
+    --content-max: 1280px;
+}
 
-    h1, h2 {
-        color: #333;
-    }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
 
-    h1 {
-        font-size: 2.2rem;
-    }
+body {
+    font-family: var(--font-body);
+    color: #111;
+    background: #fafafa;
+    line-height: 1.6;
+}
 
-    h2 {
-        font-size: 1.6rem;
-        margin-top: 30px;
-        border-bottom: 2px solid #eee;
-        padding-bottom: 5px;
-    }
+.container {
+    max-width: var(--content-max);
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
 
-    p {
-        color: #666;
-        margin-bottom: 15px;
-    }
+/* ─── HERO ───────────────────────────────────────────────────── */
+.hero {
+    --overlay: rgba(0, 0, 0, 0.55);
+    background: var(--overlay) center / cover,
+    var(--hero-bg) center / cover;
+    color: var(--clr-white);
+    min-block-size: 65vh;
+    display: flex;
+    align-items: center;
+}
+.hero-content {
+    max-inline-size: 40rem;
+}
 
-    ul {
-        margin-left: 20px;
-    }
+.hero h1 {
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    margin-block-end: 0.5rem;
+    line-height: 1.15;
+}
 
-    a {
-        color: #3498db;
-        text-decoration: none;
-    }
+.tagline { margin-block-end: 1.8rem; }
 
-    a:hover {
-        text-decoration: underline;
-    }
+.cta {
+    display: inline-block;
+    background: var(--clr-accent);
+    color: var(--clr-white);
+    padding: 0.75rem 1.4rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.25s;
+}
+
+.cta:hover { background: #cf6425; }
+
+/* ─── FEATURES ───────────────────────────────────────────────── */
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-block: 6rem;
+    align-items: center;
+}
+
+.features img {
+    inline-size: 100%;
+    block-size: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 6px 20px rgb(0 0 0 / 0.15);
+}
+
+.feat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+}
+
+.feat-list h3 { font-size: 1.3rem; margin-block-end: 0.3rem; }
+
+/* ─── ENTRIES SECTION ───────────────────────────────────────── */
+.entries {
+    background: var(--clr-black);
+    color: var(--clr-white);
+    padding-block: 4rem;
+}
+
+.journal-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 2.5rem;
+}
+
+.journal-content h2 {
+    font-size: 1.3rem;
+    margin-block-end: 0.3rem;
+    color: var(--clr-white);
+}
+
+.journal-content p,
+.journal-content ul { font-size: 0.95rem; }
+
+.journal-content ul { padding-left: 1.2rem; }
+
+/* ─── RESPONSIVE TWEAKS ─────────────────────────────────────── */
+@media (max-width: 900px) {
+    .features { grid-template-columns: 1fr; }
+    .features .feat-image { order: -1; }  /* image above text */
+    .footer-inner { grid-template-columns: 1fr; }
+}
 </style>
