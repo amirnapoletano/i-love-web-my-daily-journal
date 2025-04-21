@@ -59,7 +59,8 @@
     }
 
     /* ─── NAV LINKS ────────────────────────────────────────────── */
-    .site-nav {}
+    .site-nav {
+    }
 
     .nav-links {
         list-style: none;

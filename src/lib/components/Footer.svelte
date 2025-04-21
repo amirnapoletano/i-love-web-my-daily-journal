@@ -27,14 +27,14 @@
 <style>
     /* ─── FOOTER ─────────────────────────────────────────────────── */
     .site-footer {
-    padding-block: 3.5rem;
-    background: var(--clr-muted);
+    padding-block: 5rem;
+    background: var(--clr-accent-active);
 }
 
     .footer-inner {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 3rem;
+    gap: 6rem;
 }
 
     .footer-brand img {
@@ -45,6 +45,11 @@
 
     .footer-brand h2 { margin-block-end: 0.8rem; }
 
+    .footer-nav{
+
+
+
+    }
     .footer-nav ul {
     list-style: none;
     padding: 0;

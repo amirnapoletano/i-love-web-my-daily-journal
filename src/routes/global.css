@@ -6,6 +6,7 @@
     --clr-muted:    #7f8c8d;  /* mid gray */
     --clr-accent:   #e7722d;  /* orange */
     --clr-accent-hover: #cf6425;
+    --clr-accent-active: #000000;
 
     /* Typography */
     --fs-base:      1rem;

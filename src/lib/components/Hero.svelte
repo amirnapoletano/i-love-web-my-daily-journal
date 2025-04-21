@@ -41,14 +41,27 @@
     .hero-content {
         max-width: 100%;
     }
-    .tagline { margin-bottom: 1.5rem; font-size: var(--fs-lg); }
+    .tagline { margin-bottom: 4rem; font-size: var(--fs-lg);
+        margin-top: 2rem;
+    }
+
+img{
+    border-radius: 50px;
+    max-width: 100%;
+    max-height: 100%;
+
+}
+
+
     .cta {
+        margin: 5rem auto;
         background: var(--clr-accent);
         color: white;
         padding: .75rem 1.4rem;
-        border-radius: 4px;
+        border-radius: 9px;
         font-weight: 700;
     }
+
     .cta:hover,
     .cta:focus {
         background: var(--clr-accent-hover);
