@@ -67,8 +67,9 @@ li{
             transition: color 0.2s;
             padding-left:4rem}
 
-        .footer-nav a:hover { color: var(--clr-accent); }
-    }
+        .footer-nav a:hover { color: var(--clr-accent);
+
+        }
 
 </style>
 
