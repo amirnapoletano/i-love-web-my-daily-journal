@@ -8,9 +8,9 @@
         <div class="footer-brand">
             <picture>
                 <source srcset="{logoWebp}" type="image/webp" />
-                <img src="{logoPng}" alt="" />
+                <img src="{logoPng}" alt="logo" />
             </picture>
-            <h2>My Daily Journal</h2>
+            <h2>My Daily Journal - <span>The Sailor</span></h2>
             <p>A cozy place to reflect, write, and share your journey day by day.</p>
         </div>
 
@@ -27,9 +27,15 @@
 <style>
     /* ─── FOOTER ─────────────────────────────────────────────────── */
     .site-footer {
-    padding-block: 5rem;
+    padding-block: 6rem;
     background: var(--clr-accent-active);
+        padding-top: 2rem;
 }
+h2{
+    color: var(--clr-bg-end);
+}
+li{
+    color: var(--clr-accent);}
 
     .footer-inner {
     display: grid;
@@ -38,30 +44,31 @@
 }
 
     .footer-brand img {
-    inline-size: 48px;
-    block-size: 48px;
+    inline-size: 4rem;
+    block-size: 4rem;
     margin-block-end: 0.6rem;
 }
 
-    .footer-brand h2 { margin-block-end: 0.8rem; }
-
-    .footer-nav{
-
-
+    .footer-brand h2 { margin-block-end: 1em;
 
     }
     .footer-nav ul {
     list-style: none;
     padding: 0;
 }
+    .footer-nav{
+        padding-top:5rem;
+        padding-left: 4rem;
+    }
 
-    .footer-nav a {
-    color: #555;
-    text-decoration: none;
-    transition: color 0.2s;
-}
+        .footer-nav a {
+            color: var(--clr-accent);
+            text-decoration: none;
+            transition: color 0.2s;
+            padding-left:4rem}
 
-    .footer-nav a:hover { color: var(--clr-accent); }
+        .footer-nav a:hover { color: var(--clr-accent); }
+    }
 
 </style>
 

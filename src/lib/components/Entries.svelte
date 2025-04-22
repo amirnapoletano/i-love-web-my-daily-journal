@@ -1,4 +1,4 @@
-+<script lang="ts">
+<script lang="ts">
     /** Ideally, switch to .md + mdsvex instead of a giant HTML string! **/
 </script>
 <section id="entries" class="entries">
@@ -249,17 +249,21 @@
     <li><a href="https://web.dev/learn/design">Web Development Design Principles</a></li>
 </ul>`}
 
-</article>
+        </article>
     </div>
 </section>
 
 <style>
-    .entries { padding: 3rem 0; background: #fff; }
+    .entries { padding: 4rem 0; background: #fff;
+    margin-top: 1rem; }
+
+
+
 
     .journal-grid {
         display: grid;
-        gap: 2.5rem;
-        grid-template-columns: repeat(auto-fit, minmax(22rem, 2fr));
+        /*gap: 2.5rem;*/
+        /*grid-template-columns: repeat(auto-fit, minmax(22rem, 2fr));*/
     }
 
 </style>

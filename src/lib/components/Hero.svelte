@@ -18,7 +18,7 @@
                  width="1200" height="600" />
         </picture>
 
-        <h1>My Daily Journal 2024 / 2025</h1>
+        <h1>My Daily Journal - <span>The Sailor</span></h1>
         <p class="tagline">
             A cozy space to reflect, grow, and document your everyday journey
         </p>
@@ -52,7 +52,9 @@ img{
 
 }
 
-
+h1{
+    color: var(--clr-text);
+}
     .cta {
         margin: 5rem auto;
         background: var(--clr-accent);

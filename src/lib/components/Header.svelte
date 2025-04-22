@@ -10,7 +10,7 @@
                 <source srcset={logoWebp} type="image/webp" />
                 <img src={logoPng} alt="My Daily Journal logo" width="32" height="32" />
             </picture>
-            <span class="brand-text">My Daily Journal</span>
+            <span class="brand-text">My Daily Journal - The Sailor</span>
         </a>
 
         <nav class="site-nav" aria-label="Main navigation">
@@ -24,12 +24,12 @@
 
 <style>
     /* ─── BRAND / RESET ─────────────────────────────────────────── */
+
     .site-header {
         background-color: var(--clr-black);
         color: var(--clr-white);
         padding: 0.5rem 0;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        position: sticky;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
 
     .nav-wrapper {
@@ -49,8 +49,8 @@
 
     .brand img {
         display: block;
-        width: 32px;
-        height: 32px;
+        width: 4rem;
+        height: 4rem;
     }
 
     .brand-text {
@@ -59,8 +59,9 @@
     }
 
     /* ─── NAV LINKS ────────────────────────────────────────────── */
-    .site-nav {
-    }
+    /*.site-nav {*/
+    /*    color: var(--clr-white);*/
+    /*}*/
 
     .nav-links {
         list-style: none;
@@ -71,7 +72,7 @@
     }
 
     .nav-link {
-        color: var(--clr-white);
+        color: var(--clr-accent);
         font-size: 1rem;
         font-weight: 500;
         padding: 0.25rem 0.5rem;
